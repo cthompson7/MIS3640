@@ -65,12 +65,15 @@ Write a function with loops that computes the sum of all cubes of all the odd nu
 def sum_cubes_of_odd_numbers(n):
     s = 1
     sumOfCubes = 0
-    while (s <= n):
+    while s <= n:
         if n == 1:
             return 1
         if s % n != 0:
-            sumOfCubes = sumOfCubes + (s**3)
+            sumOfCubes = sumOfCubes + s**3
             s = s + 2
+            if s == n:
+                sumOfCubes = sumOfCubes + s**3
+                return sumOfCubes
     return sumOfCubes
 
 # When you've completed your function, uncomment the

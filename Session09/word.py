@@ -31,6 +31,18 @@ def has_no_e(word):
     # return True
         return not "e" in word.lower()
 
+def no_e_percentage():
+    totalwords = 113806
+    counter = 0
+    for line in fin:
+        word = line.strip()
+        if has_no_e(word):
+            counter = counter + 1
+
+    return counter/totalwords*100
+
+# print(no_e_percentage())
+
 # print(has_no_e('Babson'))
 # print(has_no_e('College'))
 # print(has_no_e("Epslon"))
@@ -72,27 +84,39 @@ def uses_all(word, required):
     the word uses all the required letters at least once.
     """
     for letters in required:
-        if letters in word:
-            return True
-        else:
+        if letters not in word:
             return False
 
+    return True
+
+def contains_Vowel():
+    totalwords = 113806
+    counter = 0
+    for line in fin:
+        word = line.strip()
+        if uses_all(word, "aeiouy"):
+            # print(word)
+            counter = counter + 1
+
+    return counter
+
+# print(contains_Vowel())
 
 # print(uses_all('Babson', 'abs'))
 # print(uses_all('college', 'abs'))
 
 
-# def is_abecedarian(word):
-#     """
-#     returns True if the letters in a word appear in alphabetical order
-#     (double letters are ok).
-#     """
-#     previousLetter = word[0]
-#     for letter in word:
-#         if letter < previousLetter:
-#             return False
-#         previousLetter = letter
-#     return True
+def is_abecedarian(word):
+    """
+    returns True if the letters in a word appear in alphabetical order
+    (double letters are ok).
+    """
+    previousLetter = word[0]
+    for letter in word:
+        if letter < previousLetter:
+            return False
+        previousLetter = letter
+    return True
 
 # print(is_abecedarian('abs'))
 # print(is_abecedarian('college'))
@@ -117,19 +141,36 @@ def uses_all(word, required):
 # print(is_abecedarian('abs'))
 # print(is_abecedarian('college'))
 
-
 # Rewrite is_abecedarian using while loop.
-def is_abecedarian(word):
-    """
-    returns True if the letters in a word appear in alphabetical order
-    (double letters are ok).
-    """
-    n = 0
-    while n < len(word)-1:
-        if (ord(word[n+1]) - 96) < (ord(word[n]) - 96):
-            return False
-        n = n + 1
-    return True
+# def is_abecedarian(word):
+#     """
+#     returns True if the letters in a word appear in alphabetical order
+#     (double letters are ok).
+#     """
+#     n = 0
+#     while n < len(word)-1:
+#         if (ord(word[n+1])) < (ord(word[n])):
+#             return False
+#         n = n + 1
+#     return True
+
+def find_abecdarian_words():
+    # totalwords = 113806
+    fin = open('words.txt')
+    counter = 0
+    current_longest_word = ""
+    for line in fin:
+        word = line.strip()
+        if is_abecedarian(word):
+            counter = counter + 1
+            # print(word)
+            if len(word) > len(current_longest_word):
+                current_longest_word = word
+                print("The current longest word is: "+current_longest_word)
+
+    return counter, current_longest_word
+
+print(find_abecdarian_words())
 
 # print(is_abecedarian('abs'))
 # print(is_abecedarian('college'))

@@ -69,7 +69,6 @@ print(L[1][2][1])
 # print(t)
 
 
-
 # Exercise #2
 # Read the documentation of the list methods at https://docs.python.org/3/tutorial/datastructures.html#more-on-lists.
 # You might want to experiment with some of them to make sure you understand how they work. append, extend and sort

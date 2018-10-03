@@ -56,6 +56,7 @@ def avoids(word, forbidden):
     for letters in word:
         if letters in forbidden:
             return False
+
     return True
 
 # print(avoids('Babson', 'ab'))

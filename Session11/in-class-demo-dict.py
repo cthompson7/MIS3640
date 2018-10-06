@@ -106,6 +106,7 @@ def store_words():
 
 # print(store_words())
 
+
 # 2.) Write a function named has_duplicates that takes a list as a parameter and returns True if there is any object
 # that appears more than once in the list.
 

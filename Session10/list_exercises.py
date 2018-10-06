@@ -44,6 +44,7 @@ def middle(t):
     >>> print(middle(t))
     [2, 3]
     """
+    # return t[1:-1]
     totals = t.copy()
     totals.pop(0) and totals.pop(-1)
     return totals
@@ -73,6 +74,7 @@ def is_sorted(t):
     >>> is_sorted(['b', 'a'])
     False
     """
+    # return t == sorted(t)
     for i in range(len(t)-1):
         if t[i] > t[i+1]:
             return False
@@ -94,11 +96,14 @@ def is_anagram(word1, word2):
     >>> is_anagram([1, 2, 2], [2, 1, 2])
     True
     """
-    for characters in word1:
-        if characters in word2:
-            return True
-        else:
-            return False
+    # return sorted(word1) == sorted(word2)
+    if len(word1) == len(word2):
+        for characters in word1:
+            if characters in word2:
+                return True
+            else:
+                return False
+    return False
 
 
 def has_duplicates(s):

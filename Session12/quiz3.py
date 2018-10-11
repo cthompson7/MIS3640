@@ -40,16 +40,12 @@ def replace_even(data):
     data: the list of values to process
     '''
     listOfElements = data.copy()
-    evenValues = 0
-    for i in data:
-        if i == 0:
-            listOfElements[0] = math.sqrt(listOfElements[0])
-        if i % 2 == 0:
-            if listOfElements[i] < 0:
-                listOfElements[i] = 0
 
-        listOfElements[i] = math.sqrt(listOfElements[i])
+    for i in range(0,len(data), 2):
+        if data[i] < 0:
+            data[i] = 0
 
+        data[i] = math.sqrt(data[i])
 
 # Uncomment the following lines to test
 # a = [4, 1, 0, 2, -2, 3, 23]
@@ -64,18 +60,19 @@ def is_increasing(data):
     '''
     Return True if the list is currently sorted in increasing order.
     '''
-    for i in range(len(data)-1):
-        if data[i] > data[i+1]:
+    for i in range(len(data)):
+        if data[i] < data[i+1]:
             return True
-    return False
+        else:
+            return False
 
 # Uncomment the following lines to test
-data_1 = [10, 11, 2018]
-data_2 = [11, 10, 2018]
-data_3 = [10, 10, 2018]
-print(is_increasing(data_1))
-print(is_increasing(data_2))
-print(is_increasing(data_3))
+# data_1 = [10, 11, 2018]
+# data_2 = [11, 10, 2018]
+# data_3 = [10, 10, 2018]
+# print(is_increasing(data_1))
+# print(is_increasing(data_2))
+# print(is_increasing(data_3))
 
 # Expected output:
 # True
@@ -102,3 +99,6 @@ def print_hist(data):
     for x in sorted(data):
         g = data[x]
         print(x,": ", g*'*')
+
+# letter_counts={'C': 6, 'A': 3, 'B': 10, 'Z': 8}
+# print_hist(letter_counts)

@@ -5,13 +5,11 @@
 
 class Time:
     """Represents the time of day.
-       
     attributes: hour, minute, second
     """
 
     def __init__(self, hour=0, minute=0, second=0):
         """Initializes a time object.
-
         hour: int
         minute: int
         second: int or float
@@ -22,7 +20,7 @@ class Time:
 
     def __str__(self):
         """Returns a string representation of the time."""
-        return '%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second)
+        return '{:02d}:{:02d}:{:02d}'.format(time.hour, time.minute, time.second)
 
     def print_time(self):
         """Prints a string representation of the time."""
@@ -40,7 +38,6 @@ class Time:
 
     def __add__(self, other):
         """Adds two Time objects or a Time object and a number.
-
         other: Time object or number of seconds
         """
         if isinstance(other, Time):
@@ -74,7 +71,6 @@ class Time:
 
 def int_to_time(seconds):
     """Makes a new Time object.
-
     seconds: int seconds since midnight.
     """
     minutes, second = divmod(seconds, 60)

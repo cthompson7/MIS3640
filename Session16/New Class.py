@@ -1,7 +1,7 @@
 class Kangaroo:
     """
     Represents the name and pouch contents of a kangaroo.
-    attrivutes: name, gender, pouch_contents
+    attributes: name, gender, pouch_contents
     """
 
     def __init__(self, name, gender, pouch_contents=None):

@@ -25,6 +25,13 @@ jack =turtle.Turtle()
 # square(jack)
 # turtle.mainloop()
 
+# def spiral(t):
+#     for i in range(360):
+#         square(t)
+#         t.rt(1)
+#
+# spiral(jack)
+# turtle.mainloop()
 # Exercise 2.2
 # def square(t, length):
 #     for i in range(4):

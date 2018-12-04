@@ -45,14 +45,14 @@ def main():
 
     person_list = [p1, p2, p3, p4, p5]
 
-    for e in personList:
+    for e in person_list:
         print(e)
 
-    personList.sort()
+    person_list.sort()
 
     print()
 
-    for e in personList:
+    for e in person_list:
         print(e)
 
 if __name__ == '__main__':

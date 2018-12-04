@@ -23,6 +23,7 @@ def process_file(filename, skip_header):
         for word in line.split():
             word = word.strip(strippable)
             word = word.lower()
+            print(word)
 
             # if word in hist:
             #     hist[word] += 1
@@ -111,7 +112,7 @@ def random_word(hist):
 
 def main():
     hist = process_file('Pride and Prejudice.txt', skip_header=True)
-    # print(hist)
+    print(hist)
     # print('Total number of words:', total_words(hist))
     # print('Number of different words:', different_words(hist))
 
